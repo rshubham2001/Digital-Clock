@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: 'digital-clock-font';
-  src: url('digital-7/digital-7.ttf');
+  src: url('digital-7.ttf');
 }
 
 * {
@@ -153,6 +153,8 @@ font-size: 3.8vh;
   margin-left: 15px;
   vertical-align: middle;
   text-align: center;
+  width: 25vw;
+  height: 5vh;
   border-radius: 15px;
   background-color: #383535;
   box-shadow: 0 5px 10px 0 rgba(0, 20, 0, 0.726), 0 7px 23px 0 rgba(0, 20, 0, 0.726);
