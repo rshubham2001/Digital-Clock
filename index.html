@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="load"></div>
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay_content">
+            <template>
+                <div class="card">
+                    <h4 class="zone">London</h4>
+                </div>
+            </template>
+        </div>
+
+    </div>
+    <span onclick="openNav()"><button id="btn">Country</button></span>
+    <div class="container">
+        <div class="timebar">
+            <div class="current_time" style="height: 70%;">
+                <div class="time">
+                    <h3 id="heading">Current Time at your TimeZone is :</h3>
+                    <span id="time"></span>
+                </div>
+                <div class="date">
+                    <h3 id="heading">Current Date for your TimeZone is :</h3>
+                    <span id="date"></span>
+                </div>
+            </div>
+        </div>
+        <div class="timebar" id="timebar2">
+            <div class="current_time" style="height: 70%;">
+                <div class="time">
+                    <h3 id="heading">Current Time in <span id="country"></span> :</h3>
+                    <span id="attime"></span>
+                </div>
+                <div class="date">
+                    <h3 id="heading">Current Date is :</h3>
+                    <span id="atdate"></span>
+                </div>
+
+            </div>
+        </div>
+        <button id="btn2">Stop</button>
+    </div>
+</body>
+<script>
+    document.onreadystatechange = function () {
+        var state = document.readyState
+        if (state == 'complete') {
+            setTimeout(function () {
+                document.getElementById('interactive');
+                document.getElementById('load').style.visibility = "hidden";
+            }, 1000);
+        }
+    }
+</script>
+<script src="app.js"></script>
+<script src="clock.js"></script>
+
+</html>

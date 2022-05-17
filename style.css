@@ -1,0 +1,234 @@
+#load {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9999;
+  background-color: rgb(99, 182, 182);
+  background-image: url('weather.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@font-face {
+  font-family: 'digital-clock-font';
+  src: url('digital-7/digital-7.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(93, 235, 164);
+  height: 100vh;
+  display: flex;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#btn {
+  height: 40px;
+  width: 100px;
+  margin: 20px;
+  background-color: rgb(59, 64, 66);
+  border: 2px solid rgb(59, 64, 66);
+  border-radius: 10px;
+  transition: all ease-in 0.3;
+  color: rgb(13, 243, 33);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#btn:hover {
+  transform: scale(1.09);
+  background-color: rgb(50, 185, 238);
+  color: white;
+}
+
+#btn2 {
+  height: 40px;
+  width: 100px;
+  margin: 20px;
+  background-color: rgb(59, 64, 66);
+  border: 2px solid rgb(59, 64, 66);
+  border-radius: 10px;
+  transition: all ease-in 0.3;
+  color: rgb(13, 243, 33);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#btn2:hover {
+  transform: scale(1.09);
+  background-color: rgb(50, 185, 238);
+  color: white;
+}
+
+.display {
+  display: none;
+}
+
+.timebar {
+  height: 42vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(59, 64, 66);
+  border-radius: 42px;
+  color: rgb(13, 243, 33);
+  box-shadow: 0 5px 10px 0 rgba(0, 20, 0, 0.726), 0 7px 23px 0 rgba(0, 20, 0, 0.726);
+  margin: 30px;
+  margin-bottom: 20px;
+  border: 2px solid red;
+  transition: all ease-in 0.3;
+}
+
+#timebar2 {
+  margin-bottom: 15px;
+}
+.timebar:hover {
+  transform: scale(1.09);
+  background-color: rgb(50, 185, 238);
+  color: white;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.8vh;
+}
+
+#heading {
+  margin: 2.5vh 2vw;
+  display: inline-block;
+  font-size: 4vh;
+}
+#timebar2 #heading{
+margin: 2vh 2vw;
+font-size: 3.8vh;
+}
+
+#time {
+  font-size: 4.8vh;
+  font-family: 'digital-clock-font';
+  margin-left: 15px;
+  width: 200px;
+  height: 40px;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 15px;
+  background-color: #383535;
+  box-shadow: 0 5px 10px 0 rgba(0, 20, 0, 0.726), 0 7px 23px 0 rgba(0, 20, 0, 0.726);
+}
+
+#date {
+  font-size: 4.5vh;
+  margin-left: 15px;
+  padding: 5px;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 15px;
+  background-color: #383535;
+  box-shadow: 0 5px 10px 0 rgba(0, 20, 0, 0.726), 0 7px 23px 0 rgba(0, 20, 0, 0.726);
+}
+
+#atdate {
+  font-size: 4.5vh;
+  padding: 5px;
+  margin-left: 15px;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 15px;
+  background-color: #383535;
+  box-shadow: 0 5px 10px 0 rgba(0, 20, 0, 0.726), 0 7px 23px 0 rgba(0, 20, 0, 0.726);
+}
+
+#attime {
+  font-size: 4.8vh;
+  font-family: 'digital-clock-font';
+  margin-left: 15px;
+  width: 200px;
+  height: 40px;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 15px;
+  background-color: #383535;
+  box-shadow: 0 5px 10px 0 rgba(0, 20, 0, 0.726), 0 7px 23px 0 rgba(0, 20, 0, 0.726);
+}
+
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 90%;
+  width: 0;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(255, 253, 253);
+  /* Black fallback color */
+  background-color: rgba(245, 244, 244, 0.973);
+  /* Black w/opacity */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  border: 2px solid rgb(13, 243, 33);
+  ;
+  border-radius: 20px;
+  margin-top: 25px;
+}
+
+.overlay_content {
+  /* 25% from the top */
+  width: 95%;
+  /* 100% width */
+  margin: 80px 20px;
+  /* 80px top margin to avoid conflict with the close button on smaller screens */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  color: white;
+  background-color: rgb(61, 100, 100);
+  height: 28px;
+  align-items: center;
+  border-radius: 14px;
+  padding: 7px;
+  margin: 10px 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.420), 0 6px 20px 0 rgba(0, 0, 0, 0.420);
+  cursor: pointer;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #383535;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  padding: 8px;
+  text-decoration: none;
+  color: #a8a5a5;
+  transition: 0.3s;
+}
