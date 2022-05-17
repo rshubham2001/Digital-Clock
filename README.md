@@ -4,3 +4,4 @@ This site is created for practice purpose only.
 It uses HTML, CSS and JavaScript.
 Time for difference zone is displayed by using API, provided by 'timzonedb'.
 This API is for Non-commercial use only.
+It is recommended to open this page in a Computer,Laptop or a device with large screen.
